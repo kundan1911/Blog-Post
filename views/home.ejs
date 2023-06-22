@@ -1,0 +1,18 @@
+<!-- hear the structure available in the  header file would be pasted -->
+<%- include('partial/header') -%>
+<h1>Home</h1>
+<p><%= initialContent %></p>
+<!-- traverse through each document of the post array and call the callback function on each -->
+    <% Posts.forEach(function(post){ %>
+        <!-- grab the document title -->
+        <h1><%= post.title %></h1>
+<!-- to display only the first 50 character of the postContent for each post document  -->
+        <p><%= post.postContent.substring(0,50)+"..." %>
+            <!-- to send a request to a particular route
+            for dynamism the id of the document is present in the required url
+        as soon as achor is hit a request would be send to the specific route -->
+        <a href= "/post/<%=post._id%>" >Read More</a>
+    </p>
+     <% }) %>
+  
+<%- include('partial/footer')-%>

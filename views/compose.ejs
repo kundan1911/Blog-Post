@@ -1,0 +1,14 @@
+<%- include("partial/header") -%>
+    <h1>Compose</h1>
+    <!-- as button is hit post the form on /compose route -->
+    <!-- two input tag for title and actual post -->
+    <form action="/compose" method="post">
+        <div class="form-group">
+            <label for="titleInput" class="form-label">Title</label>
+            <input type="text" class="form-control" name="titleText" id="titleInput">
+            <label for="postInput" class="form-label">Post</label>
+            <textarea class="form-control postText" name="postText" id="postInput"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3"> Publish</button>
+    </form>
+    <%- include("partial/footer") -%>
